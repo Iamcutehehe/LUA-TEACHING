@@ -1,5 +1,3 @@
-Metatables allow you to customize the behavior of tables for various operations like indexing, addition, subtraction, and more. They enable the creation of operator overloading, custom indexing, and other advanced behaviors.
-------
 _index
 getmetatable()
 setmetatable()
