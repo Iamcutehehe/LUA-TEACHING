@@ -1,1 +1,11 @@
+Thread
+- Description: Represents independent threads of execution and is used to implement coroutines. Coroutines in Lua allow for cooperative multitasking.
+- Example:
+local var = coroutine.create(
+function()
+print("Running in coroutine")
+end
+)
 
+coroutine.resume(var)
+===> Output: Running in coroutine
