@@ -1,1 +1,15 @@
+- To Print Data, We Use print() | We Can Print The Data Directly Or Indirectly.
 
+print("Hello World")
+===> Output: Hello World
+
+- When Using , As Separator Then Between 2 Data It Will Be A Tab
+print("Hello","World")
+===> Output: Hello  World
+
+local x = "Hello".."World"
+print(x)
+===> Output: HelloWorld
+
+print(111222)
+===> Output: 111222
