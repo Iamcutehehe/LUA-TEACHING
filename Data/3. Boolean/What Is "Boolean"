@@ -1,0 +1,10 @@
+Boolean
+- Description: Represents a logical entity and can have one of two values: true or false.
+- Example:
+local var = true
+
+print(var)
+===> Output: true
+
+print(type(var))
+===> Output: boolean
