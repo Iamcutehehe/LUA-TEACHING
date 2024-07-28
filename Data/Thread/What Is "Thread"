@@ -9,3 +9,6 @@ end
 
 coroutine.resume(var)
 ===> Output: Running in coroutine
+
+print(type(var))
+===> Output: thread
