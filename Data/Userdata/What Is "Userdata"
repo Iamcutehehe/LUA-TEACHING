@@ -1,4 +1,0 @@
-Userdata
-- Description: Represents arbitrary C data. It allows arbitrary C data to be stored in Lua variables. Userdata is used to represent new types created by an application or a library written in C.
-
-*Note: This can only be created via C API, not directly in Lua scripts.
