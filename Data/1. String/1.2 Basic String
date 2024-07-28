@@ -7,7 +7,13 @@ print(string)
 print(stringlength)
 ===> Output: 14
 
-You can link string with string using ..
+- You can link string with string, string with number, number with number using ..
+* Note: when using .. , your data type will become string
+Example:
 local x = "This".." Is".." String"
 print(x)
 ===> Output: This Is String
+
+local x = 11 ..22
+print(type(x),x)
+===> Output: string  1122
