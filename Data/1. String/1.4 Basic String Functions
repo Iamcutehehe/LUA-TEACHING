@@ -1,0 +1,74 @@
+Roblox Lua offers a variety of string functions to manipulate and handle string data effectively. Here is a comprehensive list of these functions:
+*Note: 
+In programming, return is a keyword used in functions to send a result back to the caller and terminate the execution of the function.
+When a function is called, it may perform some operations and then use return to provide the outcome of those operations.
+-------
+string.byte(s, i, j)
+- Description: Returns the internal numerical codes of the characters i through j in the string s. The default value for i is 1 and for j is i.
+- Example: string.byte("Lua", 1) returns 76 (ASCII code for the word 'L').
+
+string.char(...):
+- Description: Converts numerical codes to their corresponding characters and returns the resulting string.
+- Example: string.char(76, 117, 97) returns "Lua".
+-------
+string.find(s, pattern, init, plain):
+- Description: Looks for the first match of pattern in the string s, starting at position init. If plain is true, pattern matching is disabled.
+- Example: string.find("Hello Lua", "Lua") returns 7, 9.
+-------
+string.format(formatstring, ...):
+- Description: Returns a formatted string following the specified format.
+- Example: string.format("Hello %s", "Lua") returns "Hello Lua".
+-------
+string.gmatch(s, pattern):
+- Description: Returns an iterator function that, each time it is called, returns the next captures from the pattern in the string s.
+- Example: for word in string.gmatch("Hello Lua", "%a+") do print(word) end prints "Hello" and "Lua".
+
+string.match(s, pattern, init):
+- Description: Looks for the first match of pattern in the string s, starting at position init.
+- Example: string.match("Hello Lua", "Lua") returns "Lua".
+-------
+string.gsub(s, pattern, replacement, n):
+- Description: Replaces occurrences of pattern in s with replacement. If n is given, only the first n occurrences are replaced.
+- Example: string.gsub("Hello Lua", "Lua", "World") returns "Hello World".
+        
+string.sub(s, i, j):
+- Description: Returns the substring of s that starts at i and continues until j.
+- Example: string.sub("Lua", 1, 2) returns "Lu".
+-------
+string.len(s):
+- Description: Returns the length of the string s.
+- Example: string.len("Lua") returns 3.
+-------
+string.lower(s):
+- Description: Returns a copy of the string s with all uppercase letters converted to lowercase.
+- Example: string.lower("LUA LOWER") returns "lua lower".
+
+string.upper(s):
+
+Description: Returns a copy of the string s with all lowercase letters converted to uppercase.
+Example: string.upper("lua upper") returns "LUA UPPER".
+-------
+string.split(s, separator):
+- Description: Splits the string s into a table of substrings, using the specified separator.
+- Example: string.split("Hello,World", ",") returns {"Hello", "World"}.
+-------
+*Rarely used:
+string.pack(format, ...):
+- Description: Returns a binary string containing the values packed according to the specified format.
+- Example: string.pack("I4I2", 255, 65535)
+
+string.unpack(format, data, readStart):
+- Description: Returns multiple values by unpacking the binary string data according to the specified format.
+- Example: string.unpack("I4I2", packedData).
+      
+string.packsize(format):
+- Description: Returns the size of a string resulting from string.pack with the given format.
+- Example: string.packsize("I4I2") returns 6.
+
+string.rep(s, n):
+- Description: Returns a string that is the concatenation of n copies of s.
+- Example: string.rep("Lua", 3) returns "LuaLuaLua".
+
+string.reverse(s):
+- Description: Returns a copy of the string s with its characters reversed.
+- Example: string.reverse("Lua") returns "auL".
