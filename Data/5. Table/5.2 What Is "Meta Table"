@@ -1,0 +1,68 @@
+A metatable is a table that allows you to change the behavior of another table in Lua. With metatables, you can define custom behavior for operations like addition, subtraction, or even accessing elements.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Creating a Table and a Metatable:
+
+local t = {}  -- This is your regular table.
+local mt = {}  -- This is your metatable.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Setting a Metatable: Use setmetatable to associate the metatable with your regular table.
+setmetatable(t, mt)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+getmetatable is a Lua function used to retrieve the metatable of a given table or userdata.
+local t = {}
+local mt = { __index = function() return "not found" end }
+setmetatable(t, mt)
+local retrieved_mt = getmetatable(t)
+print(retrieved_mt == mt)  -- Outputs: true
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+The __index metamethod is used to define what happens when you try to access a key that doesn't exist in the table.
+Purpose: __index is used to provide default values or handle missing keys in a table.
+Table Form: If __index is a table, missing keys are looked up in this table.
+Function Form: If __index is a function, it is called to provide the value for the missing key.
+
+* _index as table
+- Example:
+local defaults = {color = "red", size = "medium"}
+local t = {}
+setmetatable(t, {__index = defaults})
+
+print(t.color)  -- Outputs: red
+print(t.size)   -- Outputs: medium
+print(t.weight) -- Outputs: nil
+
+* _index as function
+- Example:
+local t = {}
+setmetatable(t, {
+    __index = function(table, key)
+        if key == "color" then
+            return "blue"
+        else
+            return nil
+        end
+    end
+})
+
+print(t.color)  -- Outputs: blue (handled by the __index function)
+print(t.size)   -- Outputs: nil (not handled by the __index function)
+
+* Metatables with __index
+- Example:
+local t = {}
+local mt = { __index = function(table, key)
+    return key .. " not found"
+end }
+setmetatable(t, mt)
+print(t.someKey)  -- Outputs: someKey not found
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+To prevent the metatable from being changed, you can set the _metatable field in the metatable. This makes setmetatable throw an error if someone tries to change the metatable.
+
+local t = {}
+local mt = {__index = function() return "not found" end, _metatable = "protected"}
+setmetatable(t, mt)
+
+print(getmetatable(t))  -- Outputs: protected
+setmetatable(t, {})  -- Error: cannot change a protected metatable
+
+
