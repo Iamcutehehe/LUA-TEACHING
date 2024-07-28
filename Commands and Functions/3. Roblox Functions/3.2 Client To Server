@@ -1,0 +1,47 @@
+In Roblox Lua scripting, functions like FireServer() and InvokeServer() are used for communication between the client and server. Here are more functions of a similar type that facilitate client-server and server-client communication:
+-----------
+RemoteFunction Methods
+InvokeServer(arguments):
+- Usage: Used by the client to call a function on the server and wait for a response.
+- Description: This method sends data from the client to the server, invokes the OnServerInvoke callback on the server, and returns the result to the client. It's synchronous, meaning the client waits for the server to respond before continuing.
+- Example:
+--[[
+local result = remoteFunction:InvokeServer(argument1, argument2)
+print(result)
+]]
+-----------
+InvokeClient(player, arguments):
+- Usage: Used by the server to call a function on a specific client and wait for a response.
+- Description: This method sends data from the server to a specified client, invokes the OnClientInvoke callback on the client, and returns the result to the server. It's less commonly used because the server typically has all the information it needs.
+- Example:
+--[[
+local result = remoteFunction:InvokeClient(player, argument1, argument2)
+print(result)
+]]
+-----------
+RemoteEvent Methods
+FireServer(arguments):
+- Usage: Used by the client to send data to the server.
+- Description: This method triggers the OnServerEvent event on the server. It's asynchronous, so the client doesn't wait for a response and continues executing the next line of code immediately.
+- Example:
+--[[
+remoteEvent:FireServer(argument1, argument2)
+]]
+-----------
+FireClient(player, arguments):
+- Usage: Used by the server to send data to a specific client.
+- Description: This method triggers the OnClientEvent event on the specified client. It's used to send information or trigger actions on a single client.
+- Example:
+--[[
+remoteEvent:FireClient(player, argument1, argument2)
+]]
+-----------
+FireAllClients(arguments):
+- Usage: Used by the server to send data to all clients.
+- Description: This method triggers the OnClientEvent event on all clients connected to the game. It's useful for broadcasting events or updates to all players.
+- Example:
+--[[
+remoteEvent:FireAllClients(argument1, argument2)
+]]
+-----------
+These methods are essential for enabling client-server communication in Roblox, allowing for interactive and responsive game mechanics. For more details and examples, you can visit the Roblox Developer Hub​ (Roblox Creator Hub)​​
