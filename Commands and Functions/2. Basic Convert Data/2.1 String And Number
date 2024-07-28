@@ -1,1 +1,36 @@
+In Lua, particularly in Roblox scripting, there are several functions to convert data types. Here are the primary functions for type conversion:
+------
+type()
+- Description: Returns the type of the given value as a string.
+- Example:
+local x = "123"
+local y = 123
 
+print(type(x))
+===> Output: string
+print(type(y))
+===> Output: number
+------
+tonumber():
+- Description: Converts a given value to a number. If the conversion fails, it returns nil.
+- Example:
+local numstring = "123"
+local numstringnil = "stringfortest"
+
+print(type(numstring),numstring)                 ===> Output: string  123
+
+local numconvert = tonumber(numstring)
+print(type(numconvert),numconvert)               ===> Output: number  123
+
+local numnilconver = tonumber(numstringnil)
+print(type(numnilconver),numnilconver)           ===> Output: nil  nil
+------
+tonumber():
+- Description: Converts a given value to a number. If the conversion fails, it returns nil.
+- Example:
+local number = 123
+
+print(type(number),number)                      ===> Output: number  123
+
+local stringconvert = tostring(number)
+print(type(stringconvert),stringconvert)        ===> Output: string  123
