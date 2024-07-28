@@ -3,8 +3,8 @@ Table
 - Example:
 local var = {"Hi","My","Name","Is","Iren"}
 
-print(var[1])
-===> Output: Hi
+print(var[5])
+===> Output: Iren
 
 print(type(var))
 ===> Output: table
