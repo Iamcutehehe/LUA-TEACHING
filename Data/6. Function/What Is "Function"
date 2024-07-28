@@ -1,0 +1,13 @@
+Function
+- Description: Represents a block of code that can be executed. Functions are first-class values in Lua, meaning they can be stored in variables, passed as arguments, and returned by other functions.
+- Example:
+local 
+function var()
+print("Hello Lua, I am Iren")
+end
+
+var()
+===> Output: Hello Lua, I am Iren
+
+print(type(var))
+===> Output: function
