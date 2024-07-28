@@ -1,1 +1,8 @@
-
+Nil
+- Description: Represents the absence of a value or a null value. It is typically used to indicate that a variable has no value.
+- Example: 
+local var = nil
+print(var)
+===> Output: nil
+print(type(var))
+===> Output: nil
