@@ -1,1 +1,8 @@
+local string = "This Is String"
+local stringlength = #string
 
+print(string)
+===> Output: This Is String
+
+print(stringlength)
+===> Output: 14
