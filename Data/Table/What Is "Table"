@@ -1,0 +1,10 @@
+Table
+- Description: Represents associative arrays or dictionaries. Tables are the primary data structuring mechanism in Lua and can be used to represent arrays, lists, hash tables, and other complex data structures.
+- Example:
+local var = {"Hi","My","Name","Is","Iren"}
+
+print(var[1])
+===> Output: Hi
+
+print(type(var))
+===> Output: table
