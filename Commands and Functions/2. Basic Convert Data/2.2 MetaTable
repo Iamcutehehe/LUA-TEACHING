@@ -1,10 +1,56 @@
 Metatables allow you to customize the behavior of tables for various operations like indexing, addition, subtraction, and more. They enable the creation of operator overloading, custom indexing, and other advanced behaviors.
 ------
+_index
 getmetatable()
 setmetatable()
 _metatable
 ------
 In Lua, getmetatable, setmetatable, and the _metatable field are used for managing metatables, which allow you to define how tables behave when certain operations are performed on them. Here's a detailed explanation of each:
+------
+_index
+Purpose: __index is used to provide default values or handle missing keys in a table.
+Table Form: If __index is a table, missing keys are looked up in this table.
+Function Form: If __index is a function, it is called to provide the value for the missing key.
+
+* _index as table
+- Example:
+local defaults = {
+    color = "red",
+    size = "medium"
+}
+
+local t = {}
+setmetatable(t, {__index = defaults})
+
+print(t.color)  -- Outputs: red (found in defaults)
+print(t.size)   -- Outputs: medium (found in defaults)
+print(t.weight) -- Outputs: nil (not found in either table)
+
+* _index as function
+- Example:
+local t = {}
+setmetatable(t, {
+    __index = function(table, key)
+        if key == "color" then
+            return "blue"
+        else
+            return nil
+        end
+    end
+})
+
+print(t.color)  -- Outputs: blue (handled by the __index function)
+print(t.size)   -- Outputs: nil (not handled by the __index function)
+
+* Metatables with __index
+- Example:
+local t = {}
+local mt = { __index = function(table, key)
+    return key .. " not found"
+end }
+setmetatable(t, mt)
+print(t.someKey)  -- Outputs: someKey not found
+
 ------
 getmetatable()
 
@@ -46,7 +92,7 @@ print(t.unknown_key)
 ===> Outputs: "unknown_key not found"
 
 ------
-_metatable
+_metatable (Protecting Metatables)
 
 - Purpose: When set in a metatable, it prevents further changes to the metatable of the associated table. Any attempt to change the metatable will raise an error
 
@@ -58,13 +104,8 @@ print(getmetatable(t))  -- Outputs: locked
 setmetatable(t, {})  -- Error: cannot change a protected metatable
 
 - Example:
-local t = {key = "value"}
-local mt = {
-    __index = function(table, key)
-        return key .. " not found"
-    end,
-    _metatable = "locked"
-}
+local t = {}
+local mt = { __index = function() return "not found" end, _metatable = "locked" }
 setmetatable(t, mt)
 print(getmetatable(t))  -- Outputs: locked
 setmetatable(t, {})  -- Error: cannot change a protected metatable
