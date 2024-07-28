@@ -15,3 +15,8 @@ print(x)
 local x = 11 ..22
 print(type(x),x)
 ===> Output: string  1122
+
+local v = "Hello"
+local b = "I am Iren"
+print(v ..", " ..b)
+===> Output: Hello, I am Iren
