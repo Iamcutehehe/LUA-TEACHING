@@ -1,15 +1,13 @@
+To declare a string value we can use " " with words and numbers to turn it into string
+- Example:
 local string = "This Is String"
-local stringlength = #string
-
 print(string)
 ===> Output: This Is String
 
-print(stringlength)
-===> Output: 14
 
 - You can link string with string, string with number, number with number using ..
 * Note: when using .. , your data type will become string
-Example:
+- Example:
 local x = "This".." Is".." String"
 print(x)
 ===> Output: This Is String
