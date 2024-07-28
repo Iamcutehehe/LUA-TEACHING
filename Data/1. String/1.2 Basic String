@@ -6,3 +6,8 @@ print(string)
 
 print(stringlength)
 ===> Output: 14
+
+You can link string with string using ..
+local x = "This".." Is".." String"
+print(x)
+===> Output: This Is String
