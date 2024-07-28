@@ -1,0 +1,18 @@
+Meta Table also helps to associate the metatable with your regular table.
+
+-- Define a table with default values
+local defaults = {color = "red", size = "medium"}
+
+-- Create your regular table
+local t = {}
+
+-- Define a metatable with __index pointing to the defaults table
+local mt = {__index = defaults}
+
+-- Set the metatable for t
+setmetatable(t, mt)
+
+-- Access values from t
+print(t.color)  -- Outputs: red (from defaults)
+print(t.size)   -- Outputs: medium (from defaults)
+print(t.weight) -- Outputs: nil (not found in either table)
