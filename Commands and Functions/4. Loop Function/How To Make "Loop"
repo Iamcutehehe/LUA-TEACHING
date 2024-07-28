@@ -1,1 +1,109 @@
+for i = x,y,z do end
+while true do end
+repeat until ...
+--------------------------------------------------------------------------------------------------------
+The 'for' loop is used for numeric iteration. It repeats a block of code a specified number of times.
+
+*Code:
+for variable = start, end, step do
+-- your code here
+end
+
+*Explain:
+variable: The loop control variable.
+start: The initial value of the control variable.
+end: The final value of the control variable.
+step: The amount by which the control variable is incremented (optional, default is 1).
+
+* Example: 
+for i = 1, 10 do
+print(i)
+end
+===> Output:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+--------------------------------------------------------------------------------------------------------
+The 'while' loop is used for repeated execution as long as a condition is true.
+
+*Code:
+while condition do
+  -- your code here
+end
+
+*Explain:
+condition: A boolean expression that controls the loop. The loop runs as long as this condition is true.
+
+* Example: 
+local i = 1
+while i <= 10 do
+  print(i)
+  i = i + 1
+end
+===> Output:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+--------------------------------------------------------------------------------------------------------
+The repeat loop is similar to a do-while loop in other languages. It repeats a block of code until a condition becomes true.
+
+*Code:
+repeat
+  -- your code here
+until condition
+
+*Explain:
+condition: A boolean expression. The loop continues until this condition is true.
+
+*Example:
+local i = 1
+repeat
+  print(i)
+  i = i + 1
+until i > 10
+===> Output:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+--------------------------------------------------------------------------------------------------------
+*Practical Example:
+local objects = {"obj1", "obj2", "obj3"}
+
+for i = 1, #objects do
+  local obj = objects[i]
+  print(obj)
+end
+===> Output:
+obj1
+obj2
+obj3
+
+
+
+
+
 
