@@ -1,1 +1,15 @@
+To Make A Note Or A Command In Lua, We Use:
+-- or --[[ ]]
 
+- Example:
+local x = "Hello World" -- declare a local value
+print(x)
+===> Output: "Hello World"
+
+local y = "Hello World" --[[
+This Is A Comment Which You Can Break The Lines
+Like This
+Until You Close The Bracket
+]]
+print(y)
+===> Output: Hello World
