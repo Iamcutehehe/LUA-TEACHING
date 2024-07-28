@@ -2,7 +2,9 @@ Number
 - Description: Represents real (double-precision floating point) numbers. Lua supports both integer and floating-point numbers.
 - Example:
 local var = 42
+
 print(var)
 ===> Output: 42
+
 print(type(var))
 ===> Output: number
