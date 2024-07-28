@@ -1,0 +1,8 @@
+String
+- Description: Represents an array of characters. Strings in Lua are immutable, meaning that once they are created, their values cannot be changed.
+- Example:
+local var = "Hello, Lua"
+print(var)
+===> Output: Hello, Lua
+print(type(var))
+===> Output: string
