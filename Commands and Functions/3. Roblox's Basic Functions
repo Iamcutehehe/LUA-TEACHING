@@ -1,0 +1,40 @@
+ere are some commonly used Roblox Lua functions, categorized by their purpose and typical usage:
+--------------------------------------------------------------------------------------------------------------------------------------------
+Basic Instance Methods
+
+Destroy(): Permanently removes an instance from the game by setting its Parent property to nil and disconnecting all connections. After calling Destroy, the instance cannot be reused​​​​.
+Clone(): Creates a copy of an instance and all its descendants. The copy’s Parent is set to nil by default​​.
+GetChildren(): Returns a table of all the direct children of an object​.
+GetDescendants(): Returns a table of all descendants (children, grandchildren, etc.) of an object.
+ClearAllChildren(): Destroys all of an instance's children, effectively clearing its contents​​.
+--------------------------------------------------------------------------------------------------------------------------------------------
+Utility Functions
+
+WaitForChild(childName): Yields the script until the specified child is found. Useful for ensuring that a child object is available before accessing it.
+IsA(className): Checks if an instance is of a specified class, returning true if it matches and false otherwise.
+FindFirstChild(childName): Returns the first child with the specified name or nil if no such child exists. It can take an optional recursive argument to search all descendants.
+--------------------------------------------------------------------------------------------------------------------------------------------
+Player and Character Methods
+
+LoadCharacter(): Respawns the player’s character.
+EquipTool(tool): Equips a specified tool to the player's character, often used in games to handle inventory and combat mechanics.
+--------------------------------------------------------------------------------------------------------------------------------------------
+Event Handling
+
+Connect(eventHandler): Connects a function to an event, making it execute whenever the event fires. For example, connecting to Touched events of parts.
+Disconnect(): Disconnects a function from an event, stopping it from being executed when the event fires.
+--------------------------------------------------------------------------------------------------------------------------------------------
+Debugging and Utility
+
+print(...): Outputs text to the console, useful for debugging scripts​.
+warn(...): Similar to print, but outputs the text as a warning, often used to highlight potential issues or important information during script execution.
+--------------------------------------------------------------------------------------------------------------------------------------------
+Control Structures and Utility Functions
+
+pcall(func, ...): Calls a function in protected mode, catching any errors that occur. Useful for handling errors gracefully without stopping the entire script​​.
+spawn(func): Runs a function in a new thread, allowing asynchronous execution.
+delay(seconds, func): Delays the execution of a function by a specified number of seconds​​.
+pairs(table): Iterates over all key-value pairs in a table
+ipairs(table): same as pairs but stop at the first nil value
+wait(num): pause for a num second
+
